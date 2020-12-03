@@ -1,9 +1,6 @@
 extends Node
 
-var score = 0
-var level = 1
-var time = 0
-
+onready var timer = get_node("/root/Game/Timer")
 
 func _ready():
 	pass
