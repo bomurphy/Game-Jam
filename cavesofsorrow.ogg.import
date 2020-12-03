@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/cavesofsorrow.ogg-92b1e67d61fe66cf7283cb00bcaa5556.oggstr"
+
+[deps]
+
+source_file="res://cavesofsorrow.ogg"
+dest_files=[ "res://.import/cavesofsorrow.ogg-92b1e67d61fe66cf7283cb00bcaa5556.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
