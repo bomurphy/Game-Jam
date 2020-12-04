@@ -23,4 +23,4 @@ Sprites:https://opengameart.org/content/mv-platformer-skeleton
 Erik Hultgren- Level design and assets
 Bowen Murphy-
 Bryant Balting-
-Emma Beasley-
+Emma Beasley- Assets and Audio
