@@ -1,8 +1,7 @@
-extends Control
+extends CanvasLayer
 
 
-func _physics_process(_delta):
-	pass
-
-func _ready():
-	pass
+func _on_Timer_timeout():
+	if Global.timer > 0:
+		Global.timer -= 1
+		Global.update_timer()

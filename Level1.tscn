@@ -1,10 +1,9 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Camera.gd" type="Script" id=2]
-[ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/roguelikeDungeon_transparent.png" type="Texture" id=4]
-[ext_resource path="res://Portal.gd" type="Script" id=5]
+[ext_resource path="res://HUD/HUD.gd" type="Script" id=5]
 [ext_resource path="res://StateMachine/Player_Container.gd" type="Script" id=6]
 
 [sub_resource type="OccluderPolygon2D" id=1]
@@ -321,9 +320,6 @@ polygon = PoolVector2Array( 16, 50, 0, 50, 0, 0, 16, 0 )
 13/shapes = [  ]
 13/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 20, 20 )
-
 [node name="Game" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -344,14 +340,31 @@ scale = Vector2( 0.75, 0.75 )
 [node name="Camera" type="Camera2D" parent="."]
 script = ExtResource( 2 )
 
-[node name="Portal_to_2" type="Area2D" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_to_2"]
-position = Vector2( 986, 362 )
-shape = SubResource( 22 )
+[node name="ColorRect" type="ColorRect" parent="UI"]
+margin_right = 1024.0
+margin_bottom = 20.0
+color = Color( 0, 0, 0, 0.501961 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="CanvasLayer" parent="." instance=ExtResource( 3 )]
+[node name="HUD" type="Control" parent="UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Timer" type="Timer" parent="."]
-[connection signal="body_entered" from="Portal_to_2" to="Portal_to_2" method="_on_Portal_entered"]
+[node name="Time" type="Label" parent="UI/HUD"]
+margin_right = 1024.0
+margin_bottom = 20.0
+text = "Time:"
+align = 1
+valign = 1
+
+[node name="Timer" type="Timer" parent="UI"]
+autostart = true
+[connection signal="timeout" from="UI/Timer" to="UI" method="_on_Timer_timeout"]

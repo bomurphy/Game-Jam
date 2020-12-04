@@ -13,3 +13,7 @@ func _physics_process(_delta):
 		var player = Player.instance()
 		player.position = starting_position
 		add_child(player)
+
+
+func _on_Timer_timeout():
+	pass # Replace with function body.
