@@ -3,7 +3,7 @@ MSCH-C220 Game Jam, December 2020
 
 ## Theme
 We interpereted the theme of under pressure by making our game take place underground, and we incorporated a timer to make the player under pressure in a second way.
-pr
+
 ## Game Play
 The objective of our game is to make it across the screen before the timer runs out.
 
